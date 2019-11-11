@@ -1,3 +1,5 @@
+import Mode from "frontmatter-markdown-loader/mode"
+
 export default {
   mode: 'universal',
   head: {
@@ -28,6 +30,13 @@ export default {
   ],
   build: {
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: "frontmatter-markdown-loader",
+        options: {
+          mode: [Mode.HTML]
+        }
+      })
     }
   }
 }

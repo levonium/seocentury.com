@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import marked from 'marked'
+// import marked from 'marked'
 export default {
   head () {
     return {
@@ -25,9 +25,8 @@ export default {
     }
   },
   async asyncData ({ route }) {
-    const postData = await fetch(`https://seocentury.com/static/posts/${route.params.slug}.md`)
-    const post = await postData.text()
-    return { markdownContent: marked(post) }
+    const post = await import(`~/static/posts/${route.params.slug}.md`)
+    return { markdownContent: post.html }
   },
   created () {
     this.title = `${this.slugToTitle(this.slug)} |> SEO Century Blog`
