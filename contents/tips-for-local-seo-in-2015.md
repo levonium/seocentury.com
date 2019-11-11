@@ -36,5 +36,4 @@ The idea of optimizing your website in local search results is simple – it is 
 
 While the above tips may sound very basic to you, many websites still miss good alt attributes or proper titles (sometimes they are either desperately long or short), as well as important information on the home page, etc.
 
-For more information, check out local search rankings survey from [Moz](http://moz.com/blog/local-search-ranking-factors-2014).
-	
+For more information, check out local search rankings survey from [Moz](https://moz.com/blog/local-search-ranking-factors-2014).

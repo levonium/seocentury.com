@@ -13,7 +13,7 @@ Using *rel=”alternate” hreflang=”x”* annotations is very useful, however
 
 `<link rel="alternate" hreflang="<span style="color: #ff0000;">en-UK</span>" href="example.com" />`
 
-Google and Yandex both recommend using the language code in [ISO 639-1](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format and if you need to specify the country code, use the [ISO 3166-1 Alpha 2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.
+Google and Yandex both recommend using the language code in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format and if you need to specify the country code, use the [ISO 3166-1 Alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.
 
 The most common issue with these codes is using “**en-UK**” for website’s English language version for UK. If you check the ISO 3166-1 Alpha 2 codes, you will find that it should be GB (Great Britain) and not UK (United Kingdom), so the corect language-country code for this is “**en-GB**“.
 
@@ -61,12 +61,12 @@ For example, if you have a website (example.com) in 3 languages (en, es, jp), yo
 
 Your hreflang=”x” tags should include the URL versions that are the canonical ones. For example:
 
-webpage URL: example.com/en/  
+webpage URL: example.com/en/
 `<link rel="alternate" hreflang="en" href="example.com/en" /><br></br><link rel="canonical" href="example.com/en/index.php" /><br></br>`
 
 The correct option is to keep it consistent: a single URL structure and canonical and hreflang tags matching to it.
 
-webpage URL: example.com/en/  
+webpage URL: example.com/en/
 `<link rel="alternate" hreflang="en" href="example.com/en/" /><br></br><link rel="canonical" href="example.com/en/" /><br></br>`
 
 6. Missing Return Tags
@@ -82,7 +82,7 @@ If you have a <span style="background-color: #99cc00;">hreflang=”jp” href=�
 
 These are the most common issues I have noticed and hope it will help you better organize your hreflang annotations and avoid errors.
 
-*Bing does not support the hreflang annotations. Instead, it uses [language meta tags](http://blogs.bing.com/webmaster/2011/03/01/how-to-tell-bing-your-websites-country-and-language/), for example:*
+*Bing does not support the hreflang annotations. Instead, it uses [language meta tags](https://blogs.bing.com/webmaster/2011/03/01/how-to-tell-bing-your-websites-country-and-language/), for example:*
 
 `<meta http-equiv=”content-language” content="en-GB">`
 
@@ -91,4 +91,3 @@ If you experience any other issues regarding hreflangs feel free to let me know 
 <style>
 code { display: block; margin: 1em 0; background: #99cc00; padding: .25em .5em; border-radius: 4px; }<br />
 </style>
-	

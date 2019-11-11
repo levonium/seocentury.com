@@ -4,9 +4,9 @@ Published on August 11, 2015
 
 Google gets new CEO – Sundar Pichai – as the search company becomes division of Alphabet Inc. Yesterday Google announced about the new holding company – Alphabet.
 
-“Our company is operating well today, but we think we can make it cleaner and more accountable. So we are creating a new company, called Alphabet <http://abc.xyz>
+“Our company is operating well today, but we think we can make it cleaner and more accountable. So we are creating a new company, called Alphabet <https://abc.xyz>
 
-I am really excited to be running Alphabet as CEO with help from my capable partner, Sergey, as President.” [said Lary Page](http://googleblog.blogspot.com.es/2015/08/google-alphabet.html).
+I am really excited to be running Alphabet as CEO with help from my capable partner, Sergey, as President.” [said Lary Page](https://googleblog.blogspot.com.es/2015/08/google-alphabet.html).
 
 **What is Google Alphabet?**
 
@@ -23,4 +23,3 @@ Page expressed their excitement about getting more ambitious things done: “Ser
 Why did they name the company Alphabet? Here’s now Page explains it: “We liked the name Alphabet because it means a collection of letters that represent language, one of humanity’s most important innovations, and is the core of how we index with Google search! We also like that it means alpha-bet (Alpha is investment return above benchmark), which we strive for!”
 
 The world is undoubtedly excited about this change, anticipating more important things to get done.
-	

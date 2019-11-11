@@ -6,5 +6,4 @@ Published on September 23, 2013
 
 **BlackBerry** is acquired by Fairfax Financial Holdings for only **$4.7 billion**..
 
-Read more on [Mashable](http://mashable.com/2013/09/23/blackberry-acquired-for-4-7-billion/)
-	
+Read more on [Mashable](https://mashable.com/2013/09/23/blackberry-acquired-for-4-7-billion/)

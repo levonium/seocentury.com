@@ -10,10 +10,10 @@ Let me help you create your social media marketing plan with the following 6 bas
 
 **Create social media objectives and goals.** Before you join a particular social network, figure out your objectives and goals, i.e. what you expect from that particular network and what type of content are you going to post there. You do not have to waist a lot of time creating profiles on every social network, it is important to determine which networks you want to join and what you can get from them.
 
-**Treat each channel as an individual thing.** For example**,** your Facebook and Twitter campaigns should not be the same. Pinterest, Facebook, Twitter, LinkedIn, Google Plus, etc, every network requires a unique approach and you should consider that when creating a SMM plan. For example, on Facebook, [photos get 53% more likes, 104% more comments and 84% more click-throughs on links](http://blog.bufferapp.com/7-facebook-stats-you-should-know-for-a-more-engaging-page) than text-based posts. And what fuels [engagement on Twitter](https://blog.twitter.com/2014/what-fuels-a-tweets-engagement)? For example, #**hashtags** receive a 16% boost on Twitter, while it is not the same on Facebook.
+**Treat each channel as an individual thing.** For example**,** your Facebook and Twitter campaigns should not be the same. Pinterest, Facebook, Twitter, LinkedIn, Google Plus, etc, every network requires a unique approach and you should consider that when creating a SMM plan. For example, on Facebook, [photos get 53% more likes, 104% more comments and 84% more click-throughs on links](https://blog.bufferapp.com/7-facebook-stats-you-should-know-for-a-more-engaging-page) than text-based posts. And what fuels [engagement on Twitter](https://blog.twitter.com/2014/what-fuels-a-tweets-engagement)? For example, #**hashtags** receive a 16% boost on Twitter, while it is not the same on Facebook.
 
-**Determine the best time.** When creating your SMM plan, it is important to determine the best time for your social activities. You can use social analysis tools like Followerwonk for Twitter, to find the most active hours of your followers and try to share your content at that time.  
-[SumAll](http://blog.sumall.com/journal/timing-everything-post-smarter-meow.html) has even published a timetable for the right hours to post on the social networks:
+**Determine the best time.** When creating your SMM plan, it is important to determine the best time for your social activities. You can use social analysis tools like Followerwonk for Twitter, to find the most active hours of your followers and try to share your content at that time.
+[SumAll](https://blog.sumall.com/journal/timing-everything-post-smarter-meow.html) has even published a timetable for the right hours to post on the social networks:
 
 - **Twitter** – 1-3pm weekdays
 - **Facebook** – 1-4pm and 2-5pm weekdays
@@ -31,7 +31,7 @@ It’s not only about sharing the right resources at the right time. You should 
 
 **Buffer** has collected a number of studies on [the best frequency for the top social media sites](https://blog.bufferapp.com/social-media-frequency-guide).
 
-- Post to Twitter at least 5x a day.  
+- Post to Twitter at least 5x a day.
   If you can swing up to 20 posts, you might be even better off.
 - Post to Facebook up to 2x a day.
 - Post to LinkedIn 1x per day.
@@ -42,4 +42,3 @@ It’s not only about sharing the right resources at the right time. You should 
 **The ask rule**. Now that you are doing all of the above-mentioned steps, you should ask yourself these questions in order to see if you have done all in the right way. Do your customers think about your company the way you want to? Do you get enough engagement from the social networks? Have you built the image that you wanted?
 
 Hope this post will help you create a plan for your social media marketing campaign.
-	

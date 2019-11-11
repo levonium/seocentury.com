@@ -8,5 +8,4 @@ There has been much talk lately about some kind of major Google update – Googl
 
 Google’s Penguin update launched in April 2012, and there were 2 refreshes last year – in May and October. It was released to better catch sites spamming search results, in particular those doing so by buying links or obtaining them through link networks designed primarily to boost Google rankings.
 
-Watch the video here: [<span class="feed-video-title title yt-uix-contextlink  yt-uix-sessionlink yt-ui-ellipsis yt-ui-ellipsis-2">What should we expect in the next few months in terms of SEO for Google</span>](http://www.youtube.com/watch?v=xQmQeKU25zg "What should we expect in the next few months in terms of SEO for Google?")
-	
+Watch the video here: [<span class="feed-video-title title yt-uix-contextlink  yt-uix-sessionlink yt-ui-ellipsis yt-ui-ellipsis-2">What should we expect in the next few months in terms of SEO for Google</span>](https://www.youtube.com/watch?v=xQmQeKU25zg "What should we expect in the next few months in terms of SEO for Google?")

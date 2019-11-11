@@ -40,6 +40,7 @@ export default {
 
   generate: {
     routes: [
+      // 💩💩💩 who cares! this is never going to be changed/updated.
       '/blog/tweets-are-now-included-in-google-desktop-search-results',
       '/blog/meet-alphabet-and-sundar-pichai-as-googles-new-ceo',
       '/blog/google-is-rolling-out-a-new-interface-for-hotel-finder',

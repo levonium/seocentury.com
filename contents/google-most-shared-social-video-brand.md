@@ -9,5 +9,4 @@ Google Is Most Shared Social Video Brand Of 2012
 
 **Unruly 2012 Social Video Share Index –** The top 10 brands based on the number of shares their video campaigns attracted across Facebook, Twitter and the blogosphere.
 
-*source: [Unruly Media](http://www.unrulymedia.com/unrulys-most-shared-social-video-brands-of-2012 "Unruly")*
-	
+*source: [Unruly Media](https://www.unrulymedia.com/unrulys-most-shared-social-video-brands-of-2012 "Unruly")*

@@ -4,7 +4,7 @@ Published on July 15, 2015
 
 Good news! LinkedIn crosses 1 million unique publishers on LinkedIn’s blogging platform.
 
-“We just reached an incredible milestone for the LinkedIn publishing platform: 1 million professionals have now written a post on [LinkedIn](http://blog.linkedin.com/2015/07/09/1-million-linkedin-publishers/).”
+“We just reached an incredible milestone for the LinkedIn publishing platform: 1 million professionals have now written a post on [LinkedIn](https://blog.linkedin.com/2015/07/09/1-million-linkedin-publishers/).”
 
 I should admit that LinkedIn has always been one of my favorite websites. Since I joined it in January 2011, I have been constantly learning new insights from professionals all around the world.
 
@@ -25,4 +25,3 @@ And if you are not publishing on LinkedIn, you should be. Why?
 LinkedIn publishing is open to all English speaking members, and is said to soon be available in every language.
 
 Good luck!
-	

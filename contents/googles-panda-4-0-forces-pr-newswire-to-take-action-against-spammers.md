@@ -2,9 +2,9 @@
 
 Published on June 30, 2014
 
-[Google Panda 4.0](http://www.360opps.com/seo/google-rolls-out-panda-4-0/) had pretty negative effects on press release sites, including the large press release distribution company – PR Newswire. Panda aims to take down on low quality content and prevent low quality websites from ranking high in the search engine results pages (SERP).[![pr-newswire](https://www.seocentury.com/blog/wp-content/uploads/2014/06/f-pr-newswire.jpg)](https://www.seocentury.com/blog/wp-content/uploads/2014/06/f-pr-newswire.jpg)
+[Google Panda 4.0](https://www.360opps.com/seo/google-rolls-out-panda-4-0/) had pretty negative effects on press release sites, including the large press release distribution company – PR Newswire. Panda aims to take down on low quality content and prevent low quality websites from ranking high in the search engine results pages (SERP).[![pr-newswire](https://www.seocentury.com/blog/wp-content/uploads/2014/06/f-pr-newswire.jpg)](https://www.seocentury.com/blog/wp-content/uploads/2014/06/f-pr-newswire.jpg)
 
-The PR Newswire aims to recover from algorithmic penalty by taking action on spammers with the following [new press release guidelines](http://www.prnewswire.com/news-releases/pr-newswire-takes-action-against-spammers-with-new-press-release-guidelines--deletion-of-low-quality-content-263986161.html):
+The PR Newswire aims to recover from algorithmic penalty by taking action on spammers with the following [new press release guidelines](https://www.prnewswire.com/news-releases/pr-newswire-takes-action-against-spammers-with-new-press-release-guidelines--deletion-of-low-quality-content-263986161.html):
 
 - Inclusion of insightful analysis and original content (e.g. research, reporting or other interesting and useful information);
 - Use of varied release formats, guarding against repeated use of templated copy (except boilerplate);
@@ -19,5 +19,4 @@ This sounds good and I wish PR Newswire best of luck. <span class="share-body"><
 
 Stay tuned!
 
-Shared via: [360opps](http://www.360opps.com/seo/googles-panda-4-0-forces-pr-newswire-to-take-action-against-spammers/)
-	
+Shared via: [360opps](https://www.360opps.com/seo/googles-panda-4-0-forces-pr-newswire-to-take-action-against-spammers/)

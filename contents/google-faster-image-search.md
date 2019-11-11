@@ -10,5 +10,4 @@ People looking for images on Google often want to browse through many images, lo
 
 As they said, in the next few days, we’ll see image results displayed in an inline panel so it’s faster, more beautiful, and more reliable. You will be able to quickly flip through a set of images by using the keyboard. If you want to go back to browsing other search results, just scroll down and pick up right where you left off.
 
-read more at [Google Webmaster Central Blog](http://googlewebmastercentral.blogspot.com/2013/01/faster-image-search.html "Google Webmaster Central Blog")
-	
+read more at [Google Webmaster Central Blog](https://googlewebmastercentral.blogspot.com/2013/01/faster-image-search.html "Google Webmaster Central Blog")

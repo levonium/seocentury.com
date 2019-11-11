@@ -6,7 +6,7 @@ Published on August 28, 2014
 
 SEO is almost 20 years old. Though there are some arguments about when the practice began to be used, many experts agree that the birth of SEO is 1995. Since 1995 its strategies, tips and tactics have been constantly changing, however the main idea is still the same – it’s about marketing. SEO is about loving your customers, producing creative ideas and delivering quality products and services.
 
-At some stages many SEO beginners and not only beginners get frustrated: “SEO is dead,” “My website was penalized and I do not know why,” “I still cannot recover from penalty,”  
+At some stages many SEO beginners and not only beginners get frustrated: “SEO is dead,” “My website was penalized and I do not know why,” “I still cannot recover from penalty,”
 “I have sent the 3rd website reconsideration request and my penalty is still not revoked,” “I do not get enough traffic,” “My SEO campaign is just a waste of time”. You can hear plenty of complaints that can make you stop for a moment and ask yourself a question: “Do I really need to waste my time?”
 
 No, you need to SPEND your time working hard on SEO campaign to get what you want out of it! If you’re new on the web do not hesitate to start an SEO campaign, contact [professional SEO company](https://www.seocentury.com), get in touch with SEO experts. It’s what every business, large and small, needs. Internet has billions of websites the number of which is growing with each passing day. It’s obvious that it is hard to stand out of the crowd, meantime it is clear that you should say yes to SEO campaign and constantly keep doing it.
@@ -15,7 +15,7 @@ Now, if you’re already doing SEO, there are some tips that will help you becom
 
 **Actions vs Words.** Create something, it can be a tool, an application, a unique product, whatever, just do it in a smart way. Your actions will speak about the skills you have and how good you are. Many people put super big introduction in about section of their websites and social profiles, saying who they are, what they do and how they do it. It’s OK if they can prove it. However, sometimes after a large text, you may notice that there are no particular projects mentioned. Do not make the same mistake, put the projects you have completed, the tools you have created, applications you have launched and publications you have produced. It’s very important to prove your words with actions.
 
-**Never give up, it’s all about time**. Today’s SEO and social media experts, the examples of which we all try to follow, admit that they have not reached success in one month or so. Once I read in [Dr. Pete’s open letter to new SEO’s](http://moz.com/blog/an-open-letter-to-new-seos) about the efforts he put to reach success.
+**Never give up, it’s all about time**. Today’s SEO and social media experts, the examples of which we all try to follow, admit that they have not reached success in one month or so. Once I read in [Dr. Pete’s open letter to new SEO’s](https://moz.com/blog/an-open-letter-to-new-seos) about the efforts he put to reach success.
 
 - - - - - -
 
@@ -32,4 +32,3 @@ It’s important not to compare yourself with others and just constantly do what
 Remember that SEO is not a cricket game it’s a never ending marathon.
 
 I have also published this article on [LinkedIn](https://www.linkedin.com/pulse/article/20140827124303-102575515-seo-is-a-never-ending-marathon-how-to-keep-running).
-	

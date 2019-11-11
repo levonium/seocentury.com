@@ -12,9 +12,8 @@ Alexander Patsay, director of program management at Moscow-based software maker 
 
 The iOS 6 system will be available for download on September 19. Cupertino, California-based Apple said today orders for the iPhone 5 topped **two million units in the first 24 hours**.
 
-![](http://media.tumblr.com/tumblr_mak6c0GZ7Z1rq1qxm.jpg)
+![](https://media.tumblr.com/tumblr_mak6c0GZ7Z1rq1qxm.jpg)
 
 Apple dropped using Google’s applications including **Google Maps** and **YouTube** because Google’s Android software helps other smartphone producers to compete with Apple…
 
-read more at [Bloomberg](http://www.bloomberg.com/news/2012-09-17/yandex-map-search-to-be-integrated-into-apple-software-in-russia.html "Ynadex Maps to be integrated into Apple Spftware")
-	
+read more at [Bloomberg](https://www.bloomberg.com/news/2012-09-17/yandex-map-search-to-be-integrated-into-apple-software-in-russia.html "Ynadex Maps to be integrated into Apple Spftware")

@@ -24,5 +24,4 @@ In fact, **100 million** new speakers can use Voice Search now, with the additio
 - Slovak
 - Swedish
 
-This update has already started to roll out, and will continue to do so over the course of the next week… Read more at [Official Google Blog](http://googleblog.blogspot.com/2012/08/voice-search-arrives-in-13-new-languages.html "Voice Search arrives in 13 new languages")
-	
+This update has already started to roll out, and will continue to do so over the course of the next week… Read more at [Official Google Blog](https://googleblog.blogspot.com/2012/08/voice-search-arrives-in-13-new-languages.html "Voice Search arrives in 13 new languages")

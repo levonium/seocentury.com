@@ -6,6 +6,5 @@ Published on July 25, 2012
 
 <span class="hasCaption">Before today, if you typed an equation, say ‘23 x 12’ in Google search bar, it would return the answer – ‘276’ above all the searches in bold: 23 x 12 = 276 …</span>
 
-<span class="hasCaption">Now it returns the answer in a useful calculator… Try it: [’23 x 12′](http://www.google.com/search?q=23+x+12 "23 x 12")  
+<span class="hasCaption">Now it returns the answer in a useful calculator… Try it: [’23 x 12′](https://www.google.com/search?q=23+x+12 "23 x 12")
 </span>
-	

@@ -9,6 +9,5 @@ In today’s Google Webmasters video, Matt Cutts discusses how to tell whether y
 A couple of things that can help:
 
 - More about manual penalties [here](https://support.google.com/webmasters/answer/2604824)
-- Panda and Penguin algorithmic updates: [here](http://googlewebmastercentral.blogspot.com/2011/05/more-guidance-on-building-high-quality.html) and [here](http://googlewebmastercentral.blogspot.com/2012/04/another-step-to-reward-high-quality.html)
+- Panda and Penguin algorithmic updates: [here](https://googlewebmastercentral.blogspot.com/2011/05/more-guidance-on-building-high-quality.html) and [here](https://googlewebmastercentral.blogspot.com/2012/04/another-step-to-reward-high-quality.html)
 - Don’t spam!
-	

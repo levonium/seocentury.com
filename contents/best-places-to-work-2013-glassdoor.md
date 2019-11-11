@@ -11,7 +11,6 @@ The **Glassdoor Best Places to Work** list is an honor given to 50 companies eac
 
 The best company to work is **Facebook** where the employees are ‘very satisfied’ and <span class="minorText gdrHigh">**94%** of employees recommend this company to a friend.</span>
 
-![](http://media.tumblr.com/tumblr_meyk1o5gfR1rq1qxm.jpg)
+![](https://media.tumblr.com/tumblr_meyk1o5gfR1rq1qxm.jpg)
 
-See the full list here: [Best Places to Work 2012 | Glassdoor](http://www.glassdoor.com/Best-Places-to-Work-LST_KQ0,19.htm "Best Places To Work 2013")
-	
+See the full list here: [Best Places to Work 2012 | Glassdoor](https://www.glassdoor.com/Best-Places-to-Work-LST_KQ0,19.htm "Best Places To Work 2013")
