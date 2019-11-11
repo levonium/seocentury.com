@@ -24,12 +24,13 @@ export default {
       markdownContent: null
     }
   },
+  async asyncData ({ route }) {
+    const postData = await fetch(`https://seocentury.com/static/posts/${route.params.slug}.md`)
+    const post = await postData.text()
+    return { markdownContent: marked(post) }
+  },
   created () {
     this.title = `${this.slugToTitle(this.slug)} |> SEO Century Blog`
-    this.$http.get(`/posts/${this.slug}.md`)
-      .then((data) => {
-        this.markdownContent = marked(data.bodyText)
-      }).catch((error) => console.log(error)) // eslint-disable-line
   },
   methods: {
     slugToTitle (str) {
