@@ -29,10 +29,7 @@ export default {
     this.$http.get(`/posts/${this.slug}.md`)
       .then((data) => {
         this.markdownContent = marked(data.bodyText)
-      }).catch((error) => {
-        // eslint-disable-next-line
-        console.log(error)
-      })
+      }).catch((error) => console.log(error)) // eslint-disable-line
   },
   methods: {
     slugToTitle (str) {

@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import postsList from '~/static/posts/_posts.json'
+
 export default {
   head () {
     return {
@@ -31,13 +33,7 @@ export default {
     }
   },
   created () {
-    this.$http.get('/posts/_posts.json')
-      .then((data) => {
-        this.posts = JSON.parse(data.bodyText)
-      }).catch((error) => {
-        // eslint-disable-next-line
-        console.log(error)
-      })
+    this.posts = postsList
   }
 }
 </script>
