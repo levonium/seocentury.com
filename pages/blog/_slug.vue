@@ -25,7 +25,7 @@ export default {
     }
   },
   async asyncData ({ route }) {
-    const post = await import(`~/static/posts/${route.params.slug}.md`)
+    const post = await import(`~/contents/${route.params.slug}.md`)
     return { markdownContent: post.html }
   },
   created () {
@@ -64,9 +64,5 @@ export default {
   text-align: center;
   border-top: 1px solid var(--color--text);
   border-bottom: 1px solid var(--color--text);
-  /* position: absolute;
-  top: 120px;
-  right: calc(50vw - 600px + 240px - 300px);
-  max-width: 300px; */
 }
 </style>

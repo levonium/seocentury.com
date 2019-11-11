@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import postsList from '~/static/posts/_posts.json'
+import postsList from '~/contents/_posts.json'
 
 export default {
   head () {
