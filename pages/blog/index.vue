@@ -11,7 +11,10 @@
       <h2>Posts</h2>
       <ul class="posts-list">
         <li v-for="(post, index) in posts" :key="index">
-          <router-link :to="post.slug" v-html="post.title" />
+          <router-link :to="post.slug">
+            <small>{{ formatDate(post.date) }}</small>
+            <span v-html="post.title" />
+          </router-link>
         </li>
       </ul>
     </div>
@@ -34,6 +37,13 @@ export default {
   },
   created () {
     this.posts = postsList
+  },
+  methods: {
+    formatDate (unformated) {
+      const date = new Date(unformated)
+      const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' }
+      return new Intl.DateTimeFormat(['en-US'], options).format(date)
+    }
   }
 }
 </script>
@@ -58,6 +68,12 @@ export default {
   border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+small {
+  display: block;
+  font-size: .5em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 @media screen and (min-width: 768px) {
   .posts-list li a {

@@ -45,6 +45,10 @@ export default {
   max-width: 960px;
   margin: 0 auto;
 }
+.post-container h1 {
+  font-size: 2em;
+  line-height: 1.5;
+}
 .post-container p {
   font-size: 1.2em;
   line-height: 1.8;

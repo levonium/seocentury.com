@@ -1,4 +1,4 @@
-# nuxt
+# SEO Century
 
 > SEO Century website
 

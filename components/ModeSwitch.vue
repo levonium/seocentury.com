@@ -67,7 +67,6 @@ export default {
   height: 18px;
   background-color: var(--color--text);
   border-radius: 8px;
-  /* text-align: var(--switch-alignment); */
   text-align: left;
   cursor: pointer;
 }
@@ -82,6 +81,6 @@ export default {
   transform: translateX(0);
 }
 .switch-theme-circle[data-position="right"] {
-    transform: translateX(25px);
+  transform: translateX(25px);
 }
 </style>
