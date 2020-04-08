@@ -17,14 +17,17 @@ export default {
   loading: { color: '#fff' },
   css: [],
   plugins: [
-    '~/plugins/vue-clipboards',
-    { src: '~plugins/ga.js', mode: 'client' }
+    '~/plugins/vue-clipboards'
   ],
   buildModules: [
     '@nuxtjs/eslint-module'
   ],
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@yabhq/nuxt-fathom', {
+      siteId: 'MWHZMBZW',
+      spa: 'pushstate'
+    }],
   ],
   build: {
     extend (config, ctx) {
