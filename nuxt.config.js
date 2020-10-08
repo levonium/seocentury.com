@@ -17,17 +17,14 @@ export default {
   loading: { color: '#fff' },
   css: [],
   plugins: [
-    '~/plugins/vue-clipboards'
+    '~/plugins/vue-clipboards',
+    { src: '~plugins/plausible.js', mode: 'client' }
   ],
   buildModules: [
     '@nuxtjs/eslint-module'
   ],
   modules: [
-    '@nuxtjs/pwa',
-    ['@yabhq/nuxt-fathom', {
-      siteId: 'MWHZMBZW',
-      spa: 'pushstate'
-    }],
+    '@nuxtjs/pwa'
   ],
   build: {
     extend (config, ctx) {
