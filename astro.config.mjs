@@ -3,5 +3,6 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://seocentury.com",
+  trailingSlash: "always",
   integrations: [sitemap()],
 });
