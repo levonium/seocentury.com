@@ -1,0 +1,296 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionLabel from "../components/SectionLabel.astro";
+
+const services = [
+    {
+        title: "Technical SEO",
+        desc: "Site architecture, Core Web Vitals, crawlability, structured data, and every technical signal that determines how search engines evaluate your site.",
+    },
+    {
+        title: "Penalty Removal",
+        desc: "Specializing in both algorithmic and manual penalties — Panda, Penguin, Helpful Content. We diagnose the root cause and restore your rankings.",
+    },
+    {
+        title: "SEO Analysis",
+        desc: "A full audit of your website, backlink profile, competitors, and market opportunity. Know exactly where you stand — and what to do next.",
+    },
+    {
+        title: "Link Building",
+        desc: "Sustainable, white-hat link acquisition from authoritative sources in your industry. No PBNs. No shortcuts. Just real authority signals.",
+    },
+    {
+        title: "On-Page SEO",
+        desc: "Content strategy, keyword mapping, internal linking, and page-level optimisation that aligns with how your audience actually searches.",
+    },
+    {
+        title: "SEO Consulting",
+        desc: "Strategic guidance for in-house teams. We help you build a rigorous SEO programme — then step back so your team can own it.",
+    },
+];
+
+const process = [
+    {
+        step: "01",
+        title: "Discovery",
+        desc: "We learn your business, goals, current performance, and competitive landscape before making a single recommendation.",
+    },
+    {
+        step: "02",
+        title: "Audit & Strategy",
+        desc: "A comprehensive technical and content audit followed by a prioritized roadmap built for your specific situation.",
+    },
+    {
+        step: "03",
+        title: "Implementation",
+        desc: "We execute — or guide your team to execute — with precision. Every change tracked, every impact measured.",
+    },
+    {
+        step: "04",
+        title: "Growth & Reporting",
+        desc: "Transparent monthly reports. Regular strategy reviews. A living programme that adapts as your market does.",
+    },
+];
+---
+
+<Base title="SEO Services | SEO Century">
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="pill">SEO Services</span>
+                <h1>Working SEO<br /><em>solutions</em><br />that last.</h1>
+            </div>
+            <div class="hero-right">
+                <p class="hero-body">
+                    We realize that the needs of different businesses vary — so
+                    we build a unique SEO strategy for each client. First we
+                    analyze, then we plan, then we execute.
+                </p>
+                <a href="/contact" class="btn-primary">Get a Free Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="section-pad border-b">
+        <div class="container">
+            <SectionLabel label="What's included" />
+            <div class="grid-3 gap-1px bg-border">
+                {
+                    services.map((s, i) => (
+                        <div class="grid-cell">
+                            <span class="cell-num">0{i + 1}</span>
+                            <h3 class="cell-title">{s.title}</h3>
+                            <p class="cell-desc">{s.desc}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section-pad border-b">
+        <div class="container">
+            <div class="process-header">
+                <div>
+                    <SectionLabel label="How we work" />
+                    <h2>A process built<br />on clarity.</h2>
+                </div>
+            </div>
+            <div class="grid-4 gap-1px bg-border">
+                {
+                    process.map((p) => (
+                        <div class="grid-cell">
+                            <span class="step-num">{p.step}</span>
+                            <h3 class="cell-title">{p.title}</h3>
+                            <p class="cell-desc">{p.desc}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="section-pad border-b">
+        <div class="container quote-grid">
+            <blockquote>
+                "Your business has goals. Let us help you achieve them — whether
+                it's more traffic, better rankings, or higher conversions."
+            </blockquote>
+            <div>
+                <p class="quote-body">
+                    We are passionate about SEO because we've seen what it does
+                    for businesses. Our team knows the right methods to get you
+                    there — and keeps you there.
+                </p>
+                <a href="/contact" class="btn-primary">Start the Conversation</a
+                >
+            </div>
+        </div>
+    </section>
+</Base>
+
+<style>
+    .page-hero {
+        min-height: 60vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 140px 48px 80px;
+        border-bottom: 1px solid var(--border);
+    }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 80px;
+        width: 100%;
+    }
+    .pill {
+        display: inline-block;
+        border: 1px solid var(--border-light);
+        padding: 6px 16px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 32px;
+    }
+    h1 {
+        font-family: var(--font-display);
+        font-size: clamp(48px, 6vw, 88px);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--text);
+    }
+    h1 em {
+        color: var(--accent);
+        font-style: italic;
+    }
+    h2 {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 4vw, 52px);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--text);
+    }
+    .hero-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .hero-body {
+        font-size: 16px;
+        color: var(--text-sec);
+        line-height: 1.9;
+        margin-bottom: 32px;
+    }
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .section-pad {
+        padding: 100px 48px;
+    }
+    .border-b {
+        border-bottom: 1px solid var(--border);
+    }
+    .gap-1px {
+        gap: 1px;
+    }
+    .bg-border {
+        background: var(--border);
+    }
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .grid-4 {
+        display: grid;
+        grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    .grid-cell {
+        background: var(--bg);
+        padding: 48px 40px;
+    }
+    .cell-num {
+        font-size: 11px;
+        color: var(--text-sec);
+        letter-spacing: 0.12em;
+        display: block;
+        margin-bottom: 24px;
+    }
+    .cell-title {
+        font-family: var(--font-display);
+        font-size: 26px;
+        font-weight: 400;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+        color: var(--text);
+    }
+    .cell-desc {
+        font-size: 14px;
+        color: var(--text-sec);
+        line-height: 1.8;
+    }
+    .step-num {
+        font-family: var(--font-display);
+        font-size: 48px;
+        font-weight: 300;
+        color: var(--border);
+        display: block;
+        margin-bottom: 24px;
+    }
+    .process-header {
+        margin-bottom: 80px;
+    }
+    .quote-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        gap: 120px;
+        align-items: center;
+    }
+    blockquote {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 3vw, 44px);
+        font-weight: 300;
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+        font-style: italic;
+        color: var(--text);
+    }
+    .quote-body {
+        font-size: 15px;
+        color: var(--text-sec);
+        line-height: 1.9;
+        margin-bottom: 40px;
+    }
+    .btn-primary {
+        display: inline-block;
+        background: var(--accent);
+        padding: 16px 36px;
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #0a0a0a;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+        opacity: 0.85;
+    }
+</style>

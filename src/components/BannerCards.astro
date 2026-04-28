@@ -1,0 +1,33 @@
+---
+import BannerCard from "./BannerCard.astro";
+---
+
+<section class="banners-grid">
+    <BannerCard
+        tag="DinoMatic"
+        headline="Build High-Converting Sites — Fast"
+        cta="Explore DinoMatic"
+        href="https://dinomatic.com"
+        pattern="stripes"
+    />
+    <BannerCard
+        tag="tablrr.app"
+        headline="Centralized affiliate listing management."
+        cta="Explore tablrr.app"
+        href="/web-design"
+        pattern="dots"
+    />
+</section>
+
+<style scoped>
+    .banners-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px;
+        border-top: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1px;
+        background: var(--border);
+    }
+</style>

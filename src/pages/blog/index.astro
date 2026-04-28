@@ -1,0 +1,380 @@
+---
+import Base from "../../layouts/Base.astro";
+import BannerCards from "../../components/BannerCards.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import { getCollection } from "astro:content";
+import { POST_META } from "../../data/posts";
+
+const allPosts = (await getCollection("blog")).sort(
+    (a, b) =>
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+);
+
+const formatDate = (iso: string) =>
+    new Date(iso).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+    });
+
+const featured = allPosts[0];
+const rest = allPosts.slice(1);
+const featuredMeta = POST_META[featured.id] ?? { excerpt: "", readTime: "" };
+---
+
+<Base title="Blog | SEO Century">
+    <!-- HEADER -->
+    <section class="blog-header">
+        <div class="container">
+            <span class="pill">Blog</span>
+            <div class="header-row">
+                <h1>Ideas worth<br /><em>ranking for.</em></h1>
+                <p class="header-sub">
+                    Practical SEO and web strategy from the SEO Century team.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLE COUNT -->
+    <div class="article-count">
+        <div class="container">
+            <span>{allPosts.length} articles</span>
+        </div>
+    </div>
+
+    <!-- FEATURED -->
+    <section class="featured-section">
+        <div class="container">
+            <a href={`/blog/${featured.id}`} class="featured-card">
+                <div class="featured-img">
+                    <svg class="dot-bg" xmlns="http://www.w3.org/2000/svg">
+                        <defs
+                            ><pattern
+                                id="dots"
+                                width="24"
+                                height="24"
+                                patternUnits="userSpaceOnUse"
+                                ><circle cx="12" cy="12" r="1" fill="#E8FF47"
+                                ></circle></pattern
+                            ></defs
+                        >
+                        <rect width="100%" height="100%" fill="url(#dots)"
+                        ></rect>
+                    </svg>
+                </div>
+                <div class="featured-body">
+                    <span class="featured-tag"
+                        >Featured · {featuredMeta.readTime}</span
+                    >
+                    <h2>{featured.data.title}</h2>
+                    <p class="featured-excerpt">{featuredMeta.excerpt}</p>
+                    <div class="featured-meta">
+                        <span>{formatDate(featured.data.pubDate)}</span>
+                        <span>{featuredMeta.readTime}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- POST GRID -->
+    <section class="posts-section">
+        <div class="container">
+            <div class="posts-grid">
+                {
+                    rest.map((post) => {
+                        const meta = POST_META[post.id] ?? {
+                            excerpt: "",
+                            readTime: "",
+                        };
+                        return (
+                            <BlogCard
+                                slug={post.id}
+                                title={post.data.title}
+                                excerpt={meta.excerpt}
+                                date={formatDate(post.data.pubDate)}
+                                readTime={meta.readTime}
+                            />
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
+
+    <BannerCards />
+</Base>
+
+<style>
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .pill {
+        display: inline-block;
+        border: 1px solid var(--border-light);
+        padding: 6px 12px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 24px;
+    }
+
+    @media (min-width: 768px) {
+        .pill {
+            padding: 6px 16px;
+            font-size: 11px;
+            margin-bottom: 32px;
+        }
+    }
+    .blog-header {
+        padding: 80px 24px 60px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 640px) {
+        .blog-header {
+            padding: 100px 36px 70px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .blog-header {
+            padding: 140px 48px 80px;
+        }
+    }
+
+    .header-row {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+        .header-row {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 0;
+        }
+    }
+    h1 {
+        font-family: var(--font-display);
+        font-size: clamp(48px, 6vw, 88px);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--text);
+    }
+    h1 em {
+        color: var(--accent);
+        font-style: italic;
+    }
+    .header-sub {
+        font-size: 14px;
+        color: var(--text-sec);
+        max-width: 100%;
+        line-height: 1.8;
+    }
+
+    @media (min-width: 768px) {
+        .header-sub {
+            font-size: 15px;
+            max-width: 320px;
+        }
+    }
+    .article-count {
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+        font-size: 13px;
+        color: var(--text-sec);
+    }
+
+    @media (min-width: 640px) {
+        .article-count {
+            padding: 20px 36px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .article-count {
+            padding: 24px 48px;
+        }
+    }
+    /* FEATURED */
+    .featured-section {
+        padding: 0 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 640px) {
+        .featured-section {
+            padding: 0 36px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .featured-section {
+            padding: 0 48px;
+        }
+    }
+
+    .featured-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        transition: background 0.25s;
+    }
+
+    @media (min-width: 768px) {
+        .featured-card {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .featured-card:hover {
+        background: var(--surface);
+    }
+
+    .featured-img {
+        background: var(--surface);
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 768px) {
+        .featured-img {
+            min-height: 400px;
+            border-right: 1px solid var(--border);
+            border-bottom: none;
+        }
+    }
+    .dot-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+    }
+    .img-label {
+        font-family: monospace;
+        font-size: 12px;
+        color: var(--text-sec);
+        position: relative;
+        z-index: 1;
+    }
+    .featured-body {
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @media (min-width: 640px) {
+        .featured-body {
+            padding: 48px 40px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .featured-body {
+            padding: 64px 56px;
+        }
+    }
+    .featured-tag {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+    }
+    .featured-body h2 {
+        font-family: var(--font-display);
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+        color: var(--text);
+    }
+
+    @media (min-width: 640px) {
+        .featured-body h2 {
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .featured-body h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .featured-excerpt {
+        font-size: 14px;
+        color: var(--text-sec);
+        line-height: 1.8;
+        margin-bottom: 24px;
+    }
+
+    @media (min-width: 768px) {
+        .featured-excerpt {
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+    }
+    .featured-meta {
+        display: flex;
+        gap: 24px;
+        font-size: 13px;
+        color: var(--text-sec);
+    }
+    /* GRID */
+    .posts-section {
+        padding: 0 24px 80px;
+    }
+
+    @media (min-width: 640px) {
+        .posts-section {
+            padding: 0 36px 100px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .posts-section {
+            padding: 0 48px 120px;
+        }
+    }
+
+    .posts-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        background: var(--border);
+    }
+
+    @media (min-width: 640px) {
+        .posts-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .posts-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>

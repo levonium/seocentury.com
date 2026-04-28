@@ -1,0 +1,56 @@
+---
+const items = [
+    "Technical SEO",
+    "Penalty Removal",
+    "SEO Analysis",
+    "Link Building",
+    "Web Design",
+    "SEO Consulting",
+    "On-Page SEO",
+    "Conversion Rate",
+];
+const repeated = [...items, ...items];
+---
+
+<div class="ticker-wrap">
+    <div class="ticker-track marquee-track">
+        {
+            repeated.map((item, i) => (
+                <span class="ticker-item">
+                    <span class="ticker-text">{item}</span>
+                    <span class="ticker-sep">×</span>
+                </span>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .ticker-wrap {
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        overflow: hidden;
+        padding: 16px 0;
+    }
+    .ticker-track {
+        display: flex;
+        width: max-content;
+    }
+    .ticker-item {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        padding-right: 32px;
+    }
+    .ticker-text {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        white-space: nowrap;
+    }
+    .ticker-sep {
+        color: var(--accent);
+        font-size: 16px;
+    }
+</style>

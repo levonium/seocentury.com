@@ -1,0 +1,143 @@
+---
+interface Props {
+    tag: string;
+    headline: string;
+    cta: string;
+    href: string;
+    pattern?: "stripes" | "dots";
+}
+const { tag, headline, cta, href, pattern = "stripes" } = Astro.props;
+---
+
+<a
+    href={href}
+    class:list={["banner-card", `banner-${pattern}`]}
+    target="_blank"
+    rel="noopener"
+>
+    <div class="banner-accent-bar"></div>
+    <span class="banner-tag">{tag}</span>
+    <h3 class="banner-headline">{headline}</h3>
+    <div class="banner-cta">
+        <span class="cta-text">{cta}</span>
+        <span class="cta-arrow">→</span>
+    </div>
+</a>
+
+<style>
+    .banner-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 320px;
+        padding: 48px;
+        position: relative;
+        overflow: hidden;
+        background: var(--bg);
+        text-decoration: none;
+        transition: background 0.25s;
+    }
+    .banner-card:hover {
+        background: var(--surface);
+    }
+    .banner-card:hover .banner-accent-bar {
+        background: var(--accent);
+    }
+    .banner-card:hover .cta-text,
+    .banner-card:hover .cta-arrow {
+        color: var(--accent);
+    }
+    .banner-card:hover .cta-arrow {
+        transform: translateX(4px);
+    }
+
+    /* Patterns */
+    .banner-stripes::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 8px,
+            rgba(232, 255, 71, 0.05) 8px,
+            rgba(232, 255, 71, 0.05) 9px
+        );
+        transition: opacity 0.3s;
+    }
+    .banner-card:hover.banner-stripes::before {
+        opacity: 2;
+    }
+
+    .banner-dots::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            circle,
+            rgba(232, 255, 71, 0.07) 1.5px,
+            transparent 1.5px
+        );
+        background-size: 28px 28px;
+        transition: opacity 0.3s;
+    }
+    .banner-card:hover.banner-dots::before {
+        opacity: 2;
+    }
+
+    .banner-accent-bar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--border);
+        transition: background 0.25s;
+    }
+    .banner-tag {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    .banner-headline {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 2.5vw, 38px);
+        font-weight: 300;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        margin-bottom: 32px;
+        max-width: 360px;
+        position: relative;
+        z-index: 1;
+    }
+    .banner-cta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+        z-index: 1;
+    }
+    .cta-text {
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        transition: color 0.2s;
+    }
+    .cta-arrow {
+        font-size: 16px;
+        color: var(--text-sec);
+        transition:
+            color 0.2s,
+            transform 0.2s;
+        display: inline-block;
+    }
+</style>

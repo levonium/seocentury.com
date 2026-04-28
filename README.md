@@ -1,20 +1,17 @@
 # SEO Century
 
-> SEO Century website
+## Getting started
 
-## Build Setup
+```bash
+# 1. Install dependencies
+npm install
 
-``` bash
-# install dependencies
-$ npm run install
+# 2. Start dev server
+npm run dev        # → http://localhost:4321
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# 3. Build for production
+npm run build
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+# 4. Preview production build
+npm run preview
 ```

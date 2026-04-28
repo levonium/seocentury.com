@@ -1,0 +1,279 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionLabel from "../components/SectionLabel.astro";
+
+const features = [
+    {
+        title: "Discovery & Planning",
+        desc: "Sitemap, wireframes, tech-stack selection. We map everything before a pixel is touched.",
+    },
+    {
+        title: "UX & Visual Design",
+        desc: "Designs that reflect your brand and guide visitors toward conversion — without clutter.",
+    },
+    {
+        title: "Development",
+        desc: "Clean, semantic code. Performant, scalable, and built to the standards search engines reward.",
+    },
+    {
+        title: "SEO-First Launch",
+        desc: "Every site we build ships with schema markup, optimized metadata, and a content structure ready to rank.",
+    },
+    {
+        title: "Hosting & Domains",
+        desc: "We handle the full stack — domain registration, hosting setup, SSL, and ongoing maintenance.",
+    },
+    {
+        title: "Ongoing Growth",
+        desc: "Post-launch SEO, content, and conversion optimisation to keep improving over time.",
+    },
+];
+---
+
+<Base title="Web Design & Development | SEO Century">
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="pill">Web Design & Development</span>
+                <h1>Websites that<br /><em>sell</em> while<br />you sleep.</h1>
+            </div>
+            <div class="hero-right">
+                <p class="hero-body">
+                    Complete services from domain registration and hosting to
+                    design, development, and search optimisation. Your business
+                    deserves a solid digital foundation.
+                </p>
+                <a href="/contact" class="btn-primary">Discuss Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIG VISUAL -->
+    <section class="visual-section">
+        <div class="container">
+            <div class="big-visual"></div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section-pad border-b">
+        <div class="container">
+            <SectionLabel label="Everything included" />
+            <div class="grid-3 gap-1px bg-border">
+                {
+                    features.map((f, i) => (
+                        <div class="grid-cell">
+                            <span class="cell-num">0{i + 1}</span>
+                            <h3 class="cell-title">{f.title}</h3>
+                            <p class="cell-desc">{f.desc}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+        <div class="container cta-inner">
+            <h2>Let's build something<br /><em>worth finding.</em></h2>
+            <a href="/contact" class="btn-dark">Get a Quote</a>
+        </div>
+    </section>
+</Base>
+
+<style>
+    .page-hero {
+        min-height: 60vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 140px 48px 80px;
+        border-bottom: 1px solid var(--border);
+    }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        gap: 80px;
+        width: 100%;
+    }
+    .pill {
+        display: inline-block;
+        border: 1px solid var(--border-light);
+        padding: 6px 16px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 32px;
+    }
+    h1 {
+        font-family: var(--font-display);
+        font-size: clamp(48px, 6vw, 88px);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--text);
+    }
+    h1 em {
+        color: var(--accent);
+        font-style: italic;
+    }
+    h2 {
+        font-family: var(--font-display);
+        font-size: clamp(32px, 4vw, 60px);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: #0a0a0a;
+    }
+    h2 em {
+        font-style: italic;
+    }
+    .hero-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .hero-body {
+        font-size: 16px;
+        color: var(--text-sec);
+        line-height: 1.9;
+        margin-bottom: 32px;
+    }
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .section-pad {
+        padding: 100px 48px;
+    }
+    .border-b {
+        border-bottom: 1px solid var(--border);
+    }
+    .gap-1px {
+        gap: 1px;
+    }
+    .bg-border {
+        background: var(--border);
+    }
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .grid-cell {
+        background: var(--bg);
+        padding: 48px 40px;
+    }
+    .cell-num {
+        font-size: 11px;
+        color: var(--text-sec);
+        letter-spacing: 0.12em;
+        display: block;
+        margin-bottom: 24px;
+    }
+    .cell-title {
+        font-family: var(--font-display);
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 14px;
+        color: var(--text);
+    }
+    .cell-desc {
+        font-size: 14px;
+        color: var(--text-sec);
+        line-height: 1.8;
+    }
+    .visual-section {
+        padding: 80px 48px;
+        border-bottom: 1px solid var(--border);
+    }
+    .big-visual {
+        width: 100%;
+        height: 480px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background-image:
+            linear-gradient(
+                135deg,
+                rgba(10, 10, 10, 0.7),
+                rgba(30, 30, 30, 0.7)
+            ),
+            url(https://seocentury.com/_nuxt/img/web.7422348.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .grid-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.04;
+    }
+    .visual-label {
+        font-family: monospace;
+        font-size: 12px;
+        color: var(--text-sec);
+        position: relative;
+        z-index: 1;
+    }
+    .cta-band {
+        padding: 100px 48px;
+        background: var(--accent);
+    }
+    .cta-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            gap: 0;
+        }
+        justify-content: space-between;
+        align-items: center;
+    }
+    .btn-primary {
+        display: inline-block;
+        background: var(--accent);
+        padding: 16px 36px;
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #0a0a0a;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+        opacity: 0.85;
+    }
+    .btn-dark {
+        display: inline-block;
+        background: #0a0a0a;
+        padding: 20px 44px;
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .btn-dark:hover {
+        opacity: 0.85;
+    }
+</style>

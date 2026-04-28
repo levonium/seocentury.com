@@ -1,0 +1,592 @@
+---
+
+---
+
+<div id="share-generator" class="share-generator">
+    <div class="generator-grid">
+        <!-- TOOL -->
+        <div class="generator-main">
+            <div class="form-group">
+                <label class="form-label">URL to share</label>
+                <input
+                    id="urlInput"
+                    type="text"
+                    placeholder="https://yoursite.com/page"
+                    class="form-input"
+                />
+            </div>
+
+            <div id="messageDiv" class="form-group">
+                <label class="form-label"
+                    >Message / Description <span class="form-hint"
+                        >(not for Facebook)</span
+                    ></label
+                >
+                <textarea
+                    id="contentInput"
+                    placeholder="Add a custom message…"
+                    class="form-input form-textarea"></textarea>
+            </div>
+
+            <div id="pinterestDiv" class="form-group pinterest-group">
+                <label class="form-label pinterest-label"
+                    >Image URL <span class="form-hint">(Pinterest only)</span
+                    ></label
+                >
+                <input
+                    id="imageInput"
+                    type="text"
+                    placeholder="https://yoursite.com/image.jpg"
+                    class="form-input pinterest-input"
+                />
+            </div>
+
+            <!-- All Platforms -->
+            <div id="allPlatformsDiv" class="all-platforms">
+                <p class="platforms-label">Your sharing links</p>
+                <div class="platforms-list" id="platformsList"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="generator-sidebar">
+            <div class="info-box">
+                <div class="info-header">
+                    <div class="info-line"></div>
+                    <span class="info-title">How it works</span>
+                </div>
+                <div class="info-steps">
+                    <div class="step">
+                        <span class="step-num">01</span>
+                        <div>
+                            <p class="step-title">Paste any URL</p>
+                            <p class="step-desc">
+                                Works with any page, PDF, file, or asset —
+                                anywhere on the web.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">02</span>
+                        <div>
+                            <p class="step-title">Add your message</p>
+                            <p class="step-desc">
+                                Optional text that pre-fills the post caption on
+                                X, LinkedIn, and Pinterest.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">03</span>
+                        <div>
+                            <p class="step-title">Copy & use anywhere</p>
+                            <p class="step-desc">
+                                Drop the generated link into emails, signatures,
+                                PDFs, or any HTML element.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promo-box">
+                <p class="promo-title">Need a WordPress sharing plugin?</p>
+                <p class="promo-desc">
+                    Check out DR!M Share — built for seamless social
+                    integration.
+                </p>
+                <a
+                    href="https://drim.io/drim-share"
+                    target="_blank"
+                    rel="noopener"
+                    class="promo-link">DR!M Share →</a
+                >
+            </div>
+        </div>
+    </div>
+</div>
+
+<style is:global>
+    /* LAYOUT */
+    .share-generator {
+        width: 100%;
+    }
+
+    .generator-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        align-items: start;
+        max-width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .generator-grid {
+            grid-template-columns: 3fr 2fr;
+            gap: 80px;
+        }
+    }
+
+    .generator-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .generator-sidebar {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    @media (min-width: 768px) {
+        .generator-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+    }
+
+    /* FORM ELEMENTS */
+    .form-group {
+        margin-bottom: 32px;
+    }
+
+    #messageDiv {
+        margin-bottom: 32px;
+    }
+
+    .pinterest-group {
+        margin-bottom: 32px !important;
+    }
+
+    #messageDiv.pinterest-visible {
+        margin-bottom: 32px;
+    }
+
+    @media (min-width: 768px) {
+        .form-group {
+            margin-bottom: 48px;
+        }
+
+        #messageDiv {
+            margin-bottom: 48px;
+        }
+
+        .pinterest-group {
+            margin-bottom: 48px !important;
+        }
+    }
+
+    .form-label {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #777770;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    @media (min-width: 640px) {
+        .form-label {
+            font-size: 11px;
+        }
+    }
+
+    .form-hint {
+        color: #1e1e1e;
+        margin-left: 8px;
+    }
+
+    .pinterest-label {
+        color: #e8ff47;
+    }
+
+    .form-input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #2a2a2a;
+        padding: 16px 0;
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        color: #f0efe8;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+        border-color: #e8ff47;
+    }
+
+    .form-textarea {
+        resize: none;
+        height: 100px;
+    }
+
+    .pinterest-input {
+        border-color: rgba(232, 255, 71, 0.4);
+    }
+
+    .pinterest-input:focus {
+        border-color: #e8ff47;
+    }
+
+    /* ALL PLATFORMS */
+    .all-platforms {
+        margin-top: 48px;
+        border: 1px solid #1e1e1e;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .platforms-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #777770;
+        margin: 0;
+        padding: 16px 20px;
+        background: #111;
+        border-bottom: 1px solid #1e1e1e;
+    }
+
+    .platforms-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        background: #1e1e1e;
+        width: 100%;
+    }
+
+    .platform-item {
+        background: #0a0a0a;
+        padding: 16px 20px;
+        display: grid !important;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .platform-name {
+        width: 100px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: #e8ff47;
+        color: #0a0a0a;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+
+    .platform-link {
+        font-family: monospace;
+        font-size: 12px;
+        color: #777770;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0;
+    }
+
+    .quick-copy {
+        flex-shrink: 0;
+        background: transparent;
+        border: 1px solid #2a2a2a;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #f0efe8;
+        transition: all 0.2s;
+        white-space: nowrap;
+    }
+
+    .quick-copy:hover {
+        border-color: #e8ff47;
+        color: #e8ff47;
+    }
+
+    .quick-copy.copied {
+        background: #e8ff47;
+        border-color: #e8ff47;
+        color: #0a0a0a;
+    }
+
+    /* INFO BOX */
+    .info-box {
+        border: 1px solid #1e1e1e;
+        padding: 48px 40px;
+    }
+
+    .info-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .info-line {
+        width: 24px;
+        height: 1px;
+        background: #e8ff47;
+    }
+
+    .info-title {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #e8ff47;
+    }
+
+    .info-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .step {
+        display: flex;
+        gap: 20px;
+    }
+
+    .step-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 300;
+        color: #1e1e1e;
+        flex-shrink: 0;
+        line-height: 1;
+    }
+
+    .step-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: #f0efe8;
+        margin-bottom: 6px;
+        margin: 0;
+        margin-bottom: 6px;
+    }
+
+    .step-desc {
+        font-size: 13px;
+        color: #777770;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* PROMO BOX */
+    .promo-box {
+        background: #e8ff47;
+        padding: 40px;
+    }
+
+    .promo-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 300;
+        color: #0a0a0a;
+        line-height: 1.3;
+        margin-bottom: 8px;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .promo-desc {
+        font-size: 13px;
+        color: #0a0a0a;
+        opacity: 0.7;
+        margin-bottom: 24px;
+        line-height: 1.7;
+        margin: 0;
+        margin-bottom: 24px;
+    }
+
+    .promo-link {
+        display: inline-block;
+        background: #0a0a0a;
+        padding: 12px 28px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #e8ff47;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+
+    .promo-link:hover {
+        opacity: 0.85;
+    }
+
+    /* MOBILE RESPONSIVE */
+    .info-box {
+        padding: 24px;
+    }
+
+    .promo-box {
+        padding: 24px;
+    }
+
+    .promo-link {
+        display: block;
+        text-align: center;
+    }
+
+    .step {
+        gap: 12px;
+    }
+
+    .step-num {
+        font-size: 20px;
+    }
+
+    .form-label {
+        font-size: 10px;
+    }
+
+    .form-input {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+
+    @media (min-width: 640px) {
+        .generator-grid {
+            gap: 40px;
+        }
+
+        .info-box {
+            padding: 32px 24px;
+        }
+
+        .promo-box {
+            padding: 32px 24px;
+        }
+
+        .form-label {
+            font-size: 11px;
+        }
+
+        .form-input {
+            font-size: 15px;
+            padding: 16px 0;
+        }
+
+        .step {
+            gap: 16px;
+        }
+
+        .step-num {
+            font-size: 24px;
+        }
+
+        .promo-link {
+            display: inline-block;
+            text-align: left;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .info-box {
+            padding: 48px 40px;
+        }
+
+        .step-num {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<script>
+    const platforms = [
+        { id: "facebook", label: "Facebook" },
+        { id: "twitter", label: "X / Twitter" },
+        { id: "linkedin", label: "LinkedIn" },
+        { id: "pinterest", label: "Pinterest" },
+    ];
+
+    const urlInput = document.getElementById("urlInput") as HTMLInputElement;
+    const contentInput = document.getElementById(
+        "contentInput",
+    ) as HTMLTextAreaElement;
+    const imageInput = document.getElementById(
+        "imageInput",
+    ) as HTMLInputElement;
+    const platformsList = document.getElementById(
+        "platformsList",
+    ) as HTMLDivElement;
+
+    const generateLink = (platform: string) => {
+        const url = urlInput.value;
+        if (!url) return "";
+        const eu = encodeURIComponent(url);
+        const ec = encodeURIComponent(contentInput.value);
+        const ei = encodeURIComponent(imageInput.value);
+        switch (platform) {
+            case "facebook":
+                return `https://www.facebook.com/sharer/sharer.php?u=${eu}`;
+            case "twitter":
+                return `https://twitter.com/intent/tweet?url=${eu}${contentInput.value ? `&text=${ec}` : ""}`;
+            case "linkedin":
+                return `https://www.linkedin.com/sharing/share-offsite/?url=${eu}${contentInput.value ? `&summary=${ec}` : ""}`;
+            case "pinterest":
+                return `https://pinterest.com/pin/create/button/?url=${eu}${imageInput.value ? `&media=${ei}` : ""}${contentInput.value ? `&description=${ec}` : ""}`;
+            default:
+                return "";
+        }
+    };
+
+    const updateUI = () => {
+        platformsList.innerHTML = platforms
+            .map((p) => {
+                const link = generateLink(p.id);
+                return `
+          <div class="platform-item">
+            <span class="platform-name">${p.label}</span>
+            <span class="platform-link">${link}</span>
+            <button class="quick-copy" data-link="${link}">Copy</button>
+          </div>
+        `;
+            })
+            .join("");
+
+        platformsList.querySelectorAll(".quick-copy").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const link = (e.target as HTMLButtonElement).dataset.link;
+                if (link) {
+                    navigator.clipboard.writeText(link).then(() => {
+                        (e.target as HTMLButtonElement).classList.add("copied");
+                        (e.target as HTMLButtonElement).textContent = "✓";
+                        setTimeout(() => {
+                            (e.target as HTMLButtonElement).classList.remove(
+                                "copied",
+                            );
+                            (e.target as HTMLButtonElement).textContent =
+                                "Copy";
+                        }, 1800);
+                    });
+                }
+            });
+        });
+    };
+
+    urlInput.addEventListener("input", updateUI);
+    contentInput.addEventListener("input", updateUI);
+    imageInput.addEventListener("input", updateUI);
+
+    imageInput.addEventListener("focus", (e) => {
+        (e.target as HTMLInputElement).style.borderColor = "#E8FF47";
+    });
+
+    imageInput.addEventListener("blur", (e) => {
+        (e.target as HTMLInputElement).style.borderColor =
+            "rgba(232, 255, 71, 0.4)";
+    });
+
+    updateUI();
+</script>

@@ -1,0 +1,78 @@
+---
+import Base from "../layouts/Base.astro";
+import ShareLinkGeneratorComponent from "../components/ShareLinkGenerator.astro";
+---
+
+<Base title="Share Link Generator | SEO Century" includeLinks={true}>
+    <section class="page-header">
+        <div class="container">
+            <span class="pill">Tool</span>
+            <div class="header-row">
+                <h1>Share Link<br /><em>Generator.</em></h1>
+                <p class="header-sub">
+                    Generate custom share links for any page or file — works in
+                    PDFs, emails, signatures, anywhere.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tool-section">
+        <div class="container">
+            <ShareLinkGeneratorComponent />
+        </div>
+    </section>
+</Base>
+
+<style>
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .pill {
+        display: inline-block;
+        border: 1px solid var(--border-light);
+        padding: 6px 16px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 32px;
+    }
+    .page-header {
+        padding: 140px 48px 80px;
+        border-bottom: 1px solid var(--border);
+    }
+    .header-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            gap: 0;
+            align-items: flex-end;
+        }
+        justify-content: space-between;
+    }
+    h1 {
+        font-family: var(--font-display);
+        font-size: clamp(48px, 6vw, 88px);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--text);
+    }
+    h1 em {
+        color: var(--accent);
+        font-style: italic;
+    }
+    .header-sub {
+        font-size: 15px;
+        color: var(--text-sec);
+        max-width: 360px;
+        line-height: 1.8;
+    }
+    .tool-section {
+        padding: 80px 48px 120px;
+    }
+</style>

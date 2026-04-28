@@ -1,0 +1,106 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Contact | SEO Century">
+    <section class="contact-page">
+        <div class="contact-left">
+            <span class="pill">Contact</span>
+            <p class="contact-intro">
+                Tell us about your business, your goals, and where you're stuck.
+                We'll come back with an honest assessment and a clear plan.
+            </p>
+
+            <a href="mailto:info@seocentury.com" class="big-email">
+                info@seocentury.com
+            </a>
+
+            <div class="details-grid">
+                <div class="detail-cell">
+                    <p class="detail-label">Based in</p>
+                    <p class="detail-value">Worldwide · Remote-first</p>
+                </div>
+                <div class="detail-cell">
+                    <p class="detail-label">Response time</p>
+                    <p class="detail-value">Within 24 hours</p>
+                </div>
+                <div class="detail-cell">
+                    <p class="detail-label">Working since</p>
+                    <p class="detail-value">2013</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</Base>
+
+<style>
+    .contact-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 140px 48px 80px;
+    }
+    .contact-left {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .pill {
+        display: inline-block;
+        border: 1px solid var(--border-light);
+        padding: 6px 16px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 32px;
+    }
+    .contact-intro {
+        font-size: 15px;
+        color: var(--text-sec);
+        line-height: 1.9;
+        max-width: 480px;
+        margin-bottom: 80px;
+    }
+    .big-email {
+        display: block;
+        font-family: var(--font-display);
+        font-size: clamp(32px, 5.5vw, 88px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        color: var(--text);
+        text-decoration: none;
+        word-break: break-all;
+        margin-bottom: 80px;
+        transition: color 0.25s;
+    }
+    .big-email:hover {
+        color: var(--accent);
+    }
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        /* grid-template-columns: repeat(3, 1fr); */
+        gap: 1px;
+        background: var(--border);
+        border-top: 1px solid var(--border);
+    }
+    .detail-cell {
+        background: var(--bg);
+        padding: 40px;
+    }
+    .detail-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 12px;
+    }
+    .detail-value {
+        font-size: 20px;
+        color: var(--text);
+        font-family: var(--font-display);
+        font-weight: 300;
+    }
+</style>

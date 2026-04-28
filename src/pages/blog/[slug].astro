@@ -1,0 +1,203 @@
+---
+import Base from "../../layouts/Base.astro";
+import BannerCards from "../../components/BannerCards.astro";
+import { getCollection, render } from "astro:content";
+import { POST_META } from "../../data/posts";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const meta = POST_META[post.id] ?? { excerpt: "", readTime: "" };
+
+const formatDate = (iso: string) =>
+    new Date(iso).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+    });
+---
+
+<Base title={`${post.data.title} | SEO Century`} description={meta.excerpt}>
+    <!-- ARTICLE HEADER -->
+    <section class="article-header">
+        <div class="container">
+            <a href="/blog" class="back-link">← Back to Blog</a>
+            <span class="read-time">{meta.readTime}</span>
+            <h1>{post.data.title}</h1>
+            <div class="article-meta">
+                <span>SEO Century Team</span>
+                <span>{formatDate(post.data.pubDate)}</span>
+                <span>{meta.readTime}</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="article-body-section">
+        <div class="container">
+            {meta.excerpt && <p class="article-lede">{meta.excerpt}</p>}
+            <div class="prose">
+                <Content />
+            </div>
+
+            <!-- IN-ARTICLE CTA -->
+            <div class="article-cta">
+                <div>
+                    <p class="cta-title">Need help with your SEO strategy?</p>
+                    <p class="cta-sub">
+                        We analyze, plan, and execute — tailored to your
+                        business.
+                    </p>
+                </div>
+                <a href="/contact" class="btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <BannerCards />
+</Base>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .article-header {
+        padding: 140px 48px 80px;
+        border-bottom: 1px solid var(--border);
+    }
+    .back-link {
+        display: inline-block;
+        margin-bottom: 48px;
+        font-size: 13px;
+        color: var(--text-sec);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        transition: color 0.2s;
+    }
+    .back-link:hover {
+        color: var(--text);
+    }
+    .read-time {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 24px;
+    }
+    h1 {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 32px;
+        color: var(--text);
+    }
+    .article-meta {
+        display: flex;
+        gap: 32px;
+        padding-bottom: 40px;
+        font-size: 13px;
+        color: var(--text-sec);
+    }
+    .article-img-section {
+        padding: 0 48px 80px;
+        border-bottom: 1px solid var(--border);
+    }
+    .article-img {
+        width: 100%;
+        height: 400px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .stripe-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+    }
+    .img-label {
+        font-family: monospace;
+        font-size: 12px;
+        color: var(--text-sec);
+        position: relative;
+        z-index: 1;
+    }
+    .article-body-section {
+        padding: 0 48px 120px;
+    }
+    .article-lede {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 300;
+        color: var(--text-sec);
+        line-height: 1.9;
+        font-style: italic;
+        margin-bottom: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--border);
+    }
+    .article-cta {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 40px 48px;
+        margin-top: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+        gap: 32px;
+    }
+    .cta-title {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        color: var(--text);
+    }
+    .cta-sub {
+        font-size: 14px;
+        color: var(--text-sec);
+    }
+    .btn-primary {
+        flex-shrink: 0;
+        display: inline-block;
+        background: var(--accent);
+        padding: 16px 36px;
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #0a0a0a;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+        opacity: 0.85;
+    }
+</style>

@@ -1,0 +1,579 @@
+---
+import Base from "../layouts/Base.astro";
+import Image from "astro/components/Image.astro";
+import Ticker from "../components/Ticker.astro";
+import SectionLabel from "../components/SectionLabel.astro";
+import BlogCard from "../components/BlogCard.astro";
+import { getCollection } from "astro:content";
+import { POST_META } from "../data/posts";
+import SeoImage from "../assets/images/seo.jpg";
+
+const allPosts = (await getCollection("blog")).sort(
+    (a, b) =>
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+);
+
+const recentPosts = allPosts.slice(0, 3);
+
+const formatDate = (iso: string) =>
+    new Date(iso).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+    });
+
+const stats = [
+    { num: "12+", label: "Years of experience" },
+    { num: "300+", label: "Projects delivered" },
+    { num: "94%", label: "Client retention rate" },
+    { num: "40+", label: "Countries served" },
+];
+
+const services = [
+    {
+        num: "01",
+        title: "Search Engine Optimisation",
+        desc: "Climb rankings with precision. We build sustainable organic growth through technical excellence and strategy.",
+        href: "/seo",
+    },
+    {
+        num: "02",
+        title: "Web Design & Development",
+        desc: "Websites engineered to convert. From architecture to launch — fast, beautiful, search-engine ready.",
+        href: "/web-design",
+    },
+    {
+        num: "03",
+        title: "SEO Consulting",
+        desc: "Already have a team? We work alongside you to sharpen strategy, audit performance, and unlock growth.",
+        href: "/seo",
+    },
+    {
+        num: "04",
+        title: "Penalty Recovery",
+        desc: "Hit by Panda, Penguin, or a manual action? We specialize in full recovery and long-term protection.",
+        href: "/seo",
+    },
+];
+---
+
+<Base
+    title="SEO Century — SEO & Website Development Services"
+    includeLinks={true}
+>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="grid-lines" aria-hidden="true">
+            <div class="gl gl-25"></div>
+            <div class="gl gl-50"></div>
+            <div class="gl gl-75"></div>
+        </div>
+        <div class="hero-bg-text" aria-hidden="true">SEO CENTURY</div>
+        <div class="hero-content">
+            <span class="pill">Since 2013</span>
+            <h1>
+                The agency that puts<br />you <em>first</em> on<br />every
+                search.
+            </h1>
+            <div class="hero-ctas">
+                <a href="/contact" class="btn-primary">Start a Project</a>
+                <a href="/seo" class="btn-secondary">View Services</a>
+            </div>
+        </div>
+        <div class="scroll-hint" aria-hidden="true">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <Ticker />
+
+    <!-- STATS -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                {
+                    stats.map((s) => (
+                        <div class="stat-cell">
+                            <p class="stat-num">{s.num}</p>
+                            <p class="stat-label">{s.label}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <div>
+                    <SectionLabel label="What we do" />
+                    <h2>Full-spectrum<br />digital growth.</h2>
+                </div>
+                <p class="services-intro">
+                    From a first-page ranking to a complete digital presence —
+                    we handle the work that compounds. No shortcuts, no
+                    guesswork. Just results that last.
+                </p>
+            </div>
+            <div class="services-grid">
+                {
+                    services.map((s) => (
+                        <a href={s.href} class="service-card">
+                            <div class="service-card-top">
+                                <span class="service-num">{s.num}</span>
+                                <span class="service-arrow">→</span>
+                            </div>
+                            <h3 class="service-title">{s.title}</h3>
+                            <p class="service-desc">{s.desc}</p>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div>
+                    <SectionLabel label="Philosophy" />
+                    <h2>
+                        Your success<br />is the only<br /><em>metric</em> that matters.
+                    </h2>
+                    <p class="philosophy-body">
+                        We don't believe in one-size-fits-all SEO. Before we
+                        touch a single keyword, we study your business, your
+                        competitors, and your market. The strategy we build is
+                        yours alone.
+                    </p>
+                    <p class="philosophy-body">
+                        Flexible pricing. Transparent reporting. A partner who's
+                        invested in your outcomes — not just your invoice.
+                    </p>
+                    <a href="/contact" class="btn-primary">Work With Us</a>
+                </div>
+                <Image
+                    src={SeoImage}
+                    alt="SEO Century services"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section class="blog-preview-section">
+        <div class="container">
+            <div class="blog-preview-header">
+                <div>
+                    <SectionLabel label="Latest thinking" />
+                    <h2>From the blog.</h2>
+                </div>
+                <a href="/blog" class="all-articles-link">All Articles →</a>
+            </div>
+            <div class="blog-grid">
+                {
+                    recentPosts.map((post) => {
+                        const meta = POST_META[post.id] ?? {
+                            excerpt: "",
+                            readTime: "",
+                        };
+                        return (
+                            <BlogCard
+                                slug={post.id}
+                                title={post.data.title}
+                                excerpt={meta.excerpt}
+                                date={formatDate(post.data.pubDate)}
+                                readTime={meta.readTime}
+                            />
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+        <div class="container cta-inner">
+            <h2>Ready to rank<br /><em>above everyone?</em></h2>
+            <a href="/contact" class="btn-dark">Get in Touch</a>
+        </div>
+    </section>
+</Base>
+
+<style>
+    /* HERO */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 48px 80px;
+        position: relative;
+        overflow: hidden;
+    }
+    .grid-lines {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+    .gl {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: var(--border);
+        opacity: 0.5;
+    }
+    .gl-25 {
+        left: 25%;
+    }
+    .gl-50 {
+        left: 50%;
+    }
+    .gl-75 {
+        left: 75%;
+    }
+    .hero-bg-text {
+        position: absolute;
+        bottom: 120px;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+        font-family: var(--font-display);
+        font-size: clamp(80px, 14vw, 220px);
+        font-weight: 300;
+        color: var(--border);
+        letter-spacing: -0.04em;
+        white-space: nowrap;
+        line-height: 1;
+        margin-left: 40px;
+    }
+    .hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .pill {
+        display: inline-block;
+        border: 1px solid var(--border-light);
+        padding: 6px 16px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 32px;
+    }
+    .hero-content h1 {
+        font-family: var(--font-display);
+        font-weight: 300;
+        line-height: 1.05;
+        font-size: clamp(52px, 7vw, 100px);
+        letter-spacing: -0.03em;
+        margin-bottom: 40px;
+        color: var(--text);
+    }
+    .hero-content h1 em {
+        color: var(--accent);
+        font-style: italic;
+    }
+    .hero-ctas {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+    .scroll-hint {
+        position: absolute;
+        bottom: 40px;
+        right: 48px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .scroll-line {
+        width: 40px;
+        height: 1px;
+        background: var(--border-light);
+    }
+    .scroll-hint span {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+        display: inline-block;
+        background: var(--accent);
+        padding: 16px 36px;
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #0a0a0a;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+        opacity: 0.85;
+    }
+    .btn-secondary {
+        display: inline-block;
+        border: 1px solid var(--border-light);
+        padding: 16px 36px;
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+        background: var(--surface);
+    }
+    .btn-dark {
+        display: inline-block;
+        background: #0a0a0a;
+        padding: 20px 44px;
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .btn-dark:hover {
+        opacity: 0.85;
+    }
+
+    /* LAYOUT */
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* STATS */
+    .stats-section {
+        padding: 100px 48px;
+        border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1px;
+        background: var(--border);
+    }
+    .stat-cell {
+        background: var(--bg);
+        padding: 48px 40px;
+    }
+    .stat-num {
+        font-family: var(--font-display);
+        font-size: 64px;
+        font-weight: 300;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 12px;
+    }
+    .stat-label {
+        font-size: 13px;
+        color: var(--text-sec);
+        letter-spacing: 0.04em;
+    }
+
+    /* SERVICES */
+    .services-section {
+        padding: 120px 48px;
+        border-bottom: 1px solid var(--border);
+    }
+    .services-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 2fr;
+        }
+        gap: 80px;
+        margin-bottom: 80px;
+        align-items: end;
+    }
+    .services-header h2 {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 4vw, 56px);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+    .services-intro {
+        font-size: 16px;
+        color: var(--text-sec);
+        line-height: 1.8;
+        max-width: 480px;
+    }
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1px;
+        background: var(--border);
+    }
+    .service-card {
+        background: var(--bg);
+        padding: 56px 48px;
+        text-decoration: none;
+        transition: background 0.25s;
+        display: block;
+    }
+    .service-card:hover {
+        background: var(--surface);
+    }
+    .service-card:hover .service-arrow {
+        color: var(--accent);
+    }
+    .service-card-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 32px;
+    }
+    .service-num {
+        font-size: 12px;
+        color: var(--text-sec);
+        letter-spacing: 0.12em;
+    }
+    .service-arrow {
+        font-size: 20px;
+        color: var(--border-light);
+        transition: color 0.2s;
+    }
+    .service-title {
+        font-family: var(--font-display);
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+        color: var(--text);
+    }
+    .service-desc {
+        font-size: 14px;
+        color: var(--text-sec);
+        line-height: 1.8;
+    }
+
+    /* PHILOSOPHY */
+    .philosophy-section {
+        padding: 120px 48px;
+        border-bottom: 1px solid var(--border);
+    }
+    .philosophy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 120px;
+        align-items: center;
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4vw, 56px);
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+
+            em {
+                color: var(--accent);
+                font-style: italic;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-sec);
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    /* BLOG PREVIEW */
+    .blog-preview-section {
+        padding: 120px 48px;
+        border-bottom: 1px solid var(--border);
+    }
+    .blog-preview-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 64px;
+    }
+    .blog-preview-header h2 {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 4vw, 56px);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+    .all-articles-link {
+        font-size: 13px;
+        color: var(--text-sec);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .all-articles-link:hover {
+        color: var(--text);
+    }
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1px;
+        background: var(--border);
+    }
+
+    /* CTA BAND */
+    .cta-band {
+        padding: 120px 48px;
+        background: var(--accent);
+    }
+    .cta-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            gap: 0;
+        }
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cta-band h2 {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 5vw, 72px);
+        font-weight: 300;
+        color: #0a0a0a;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+    .cta-band h2 em {
+        font-style: italic;
+    }
+</style>

@@ -1,0 +1,158 @@
+---
+interface Props {
+    includeLinks?: boolean;
+}
+
+const { includeLinks = false } = Astro.props;
+
+const cols = [
+    {
+        title: "Services",
+        links: [
+            ["SEO Services", "/seo"],
+            ["Web Design", "/web-design"],
+        ],
+    },
+    {
+        title: "Company",
+        links: [
+            ["Blog", "/blog"],
+            ["Contact", "/contact"],
+        ],
+    },
+    {
+        title: "Tools",
+        links: [["Share Link Generator", "/share-link-generator"]],
+    },
+];
+
+if (includeLinks) {
+    cols[2].links.push(["tablrr.app", "https://tablrr.app"]);
+    cols[2].links.push(["DinoMatic", "https://dinoamtic.com"]);
+}
+---
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">
+                    <div class="logo-mark">SC</div>
+                    <span class="logo-text">SEO Century</span>
+                </a>
+                <p class="footer-tagline">
+                    The right place to create and promote your website. Premium
+                    SEO and web development since 2013.
+                </p>
+            </div>
+
+            {
+                cols.map((col) => (
+                    <div>
+                        <p class="col-title">{col.title}</p>
+                        <div class="col-links">
+                            {col.links.map(([label, href]) => (
+                                <a
+                                    href={href}
+                                    class="col-link"
+                                    {...(href.startsWith("https")
+                                        ? { target: "_blank", rel: "noopener" }
+                                        : {})}
+                                >
+                                    {label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2013 - 2026 SEO Century. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        border-top: 1px solid var(--border);
+        padding: 80px 48px 48px;
+    }
+    .footer-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+        gap: 64px;
+        margin-bottom: 80px;
+    }
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        margin-bottom: 24px;
+    }
+    .logo-mark {
+        width: 28px;
+        height: 28px;
+        background: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 14px;
+        color: #0a0a0a;
+    }
+    .logo-text {
+        font-family: var(--font-body);
+        font-weight: 500;
+        font-size: 15px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--text);
+    }
+    .footer-tagline {
+        color: var(--text-sec);
+        font-size: 14px;
+        line-height: 1.8;
+        max-width: 280px;
+    }
+    .col-title {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-sec);
+        margin-bottom: 20px;
+    }
+    .col-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .col-link {
+        font-size: 14px;
+        color: var(--text-sec);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .col-link:hover {
+        color: var(--text);
+    }
+    .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: var(--text-sec);
+    }
+</style>
